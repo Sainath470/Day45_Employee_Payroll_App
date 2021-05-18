@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap">
     <title>Employee Payroll Form</title>
+    <!-- adding css file-->
     <link rel="stylesheet" href="../css/add_employee_payroll.css">
    
 </head>
@@ -22,7 +23,7 @@
    </header> 
  <!-- UC2: -->
    <div id="formId" class="form-content">
-    <form class="form" action="#" onreset="resetForm()" onsubmit="save(event)">
+    <form class="form" action="#" onreset="resetForm()" action="db.json" onsubmit="save()">
 
         <div class="form-head">Employee Payroll form </div>
           <div class="row-content">
@@ -167,14 +168,9 @@
      </div>
     </form>
    </div>
- 
-
-    const salary = document.querySelector('#salary');
-    const output = document.querySelector('.salary-output');
-    output.textContent = salary.value;
-    salary.addEventListener('input', function(){
-        output.textContent = salary.value;
-    });
-    </script>
+   <!-- adding javascript files-->
+   <script src="../js/add_employee_payroll.js"></script>
+   <Script src="../js/EmployeePayrollData.js"> </Script>
+   <Script src="../js/add_employee_payroll2.js"></Script>
 </body>
 </html>
