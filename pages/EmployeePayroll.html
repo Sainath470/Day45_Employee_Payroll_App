@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap">
     <title>Employee Payroll Form</title>
     <!-- adding css file-->
-    <link rel="stylesheet" href="../css/add_employee_payroll.css">
+    <link rel="stylesheet" href="../css/EmployeePayrolladd.css">
    
 </head>
 <body>
@@ -23,7 +23,7 @@
    </header> 
  <!-- UC2: -->
    <div id="formId" class="form-content">
-    <form class="form" action="#" onreset="resetForm()" action="db.json" onsubmit="save()">
+    <form class="form" action="#" onreset="resetForm()"  onsubmit="save()">
 
         <div class="form-head">Employee Payroll form </div>
           <div class="row-content">
@@ -160,7 +160,7 @@
            <textarea id="notes" class="input" name="Notes" placeholder="Enter the text here..." style="height:100px"></textarea>
        </div>
        <div class="buttonParent">
-           <a href="./home.html" class="resetButton button cancelButton">Cancel</a>
+           <a href="../pages/EmployeePayroll.html" class="resetButton button cancelButton">Cancel</a>
         <div class="submit-reset">
             <button type="submit" class="button submitButton" id="submitButton">Submit</button>
             <button type="reset" class="resetButton button">Reset</button>
@@ -169,8 +169,8 @@
     </form>
    </div>
    <!-- adding javascript files-->
-   <script src="../js/add_employee_payroll.js"></script>
-   <Script src="../js/EmployeePayrollData.js"> </Script>
-   <Script src="../js/add_employee_payroll2.js"></Script>
+   <script defer src="../js/EmployeePayrollData.js"></script>
+   <script defer src="../js/add.js"></script>
+   
 </body>
 </html>

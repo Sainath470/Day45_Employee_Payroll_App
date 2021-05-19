@@ -1,57 +1,59 @@
 // ------------UC1---------------
 class EmployeePayrollData{
-  /*constructor*/ EmployeePayrollData(...params) {
-    this.id = params[0];
-    this.name = params[1];
-    this.profilePic = params[2];
-    this.gender = params[3];
-    this.department = params[4];
-    this.salary = params[5];
-    this.startDate = params[6];
-    this.note = params[7];
-  }
-    get id()
-    {
+
+    /*constructor*/ EmployeePayrollData(...params) {
+        this.id = params[0];
+        this.name = params[1];
+        this.profilePic = params[2];
+        this.gender = params[3];
+        this.department = params[4];
+        this.salary = params[5];
+        this.startDate = params[6];
+        this.note = params[7];
+      }
+      
+    get id() {
         return this._id;
     }
-      set id(id) 
-    {
+
+    set id(id) {
         this._id = id;
     }
-    
-    get name() 
-    {
+
+    get name() {
         return this._name;
     }
 
-     set name(name) {
-             let nameRegex = RegExp("^[A-Z]{1}[a-z]{2,}$");
-             if(nameRegex.test(name))
-             this._name = name;
-            else throw 'Name is incorrect';  
+    set name(name) {
+        const nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+        if (nameRegex.test(name)) {
+            this._name = name;
+        } else {
+            throw 'Name is Incorrect';
+        }
     }
 
-     get profilePic() {
+    get profilePic() {
         return this._profilePic;
     }
 
-     set profilePic(profilePic) {
+    set profilePic(profilePic) {
         this._profilePic = profilePic;
     }
 
-     get gender() {
+    get gender() {
         return this._gender;
     }
 
-   set gender( gender) {
+    set gender(gender) {
         this._gender = gender;
     }
 
-     get department() {
+    get department() {
         return this._department;
     }
 
-     set department( department) {
+    set department(department) {
         this._department = department;
     }
 
@@ -59,7 +61,7 @@ class EmployeePayrollData{
         return this._salary;
     }
 
-     set salary( salary) {
+    set salary(salary) {
         this._salary = salary;
     }
 
@@ -67,19 +69,15 @@ class EmployeePayrollData{
         return this._startDate;
     }
 
-    set startDate( startDate) {
-        let currentDate = new Date();
-        let day = currentDate.getDate();
-        let month = currentDate.getMonth();
-        let year = current.getFullYear(); 
+    set startDate(startDate) {
         this._startDate = startDate;
     }
 
-     get note() {
+    get note() {
         return this._note;
     }
 
-     set note( note) {
+    set note(note) {
         this._note = note;
     }
 
