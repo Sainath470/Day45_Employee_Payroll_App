@@ -1,17 +1,6 @@
 // ------------UC1---------------
-class EmployeePayrollData{
+class EmployeePayroll {
 
-    /*constructor*/ EmployeePayrollData(...params) {
-        this.id = params[0];
-        this.name = params[1];
-        this.profilePic = params[2];
-        this.gender = params[3];
-        this.department = params[4];
-        this.salary = params[5];
-        this.startDate = params[6];
-        this.note = params[7];
-      }
-      
     get id() {
         return this._id;
     }
@@ -83,12 +72,12 @@ class EmployeePayrollData{
 
     toString() {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        const empDate = !this.startDate ? 'undefined' : 
-                        this.startDate.toLocaleDateString('en-US', options);
-        return ("id=" + this.id + ", name=" + this.name + ", gender="
-            + this.gender + ", profilePic=" + this.profilePic
-            + ", departments=" + this.department + ", salary="
-            + this.salary + ", startDate=" + empDate
-            + ", note=" + this.note);
+        const empDate = !this._startDate ? 'undefined' : this._startDate.toLocaleDateString('en-US', options);
+        return "name=" + this._name + ", gender="
+            + this._gender + ", profilePic=" + this._profilePic
+            + ", departments=" + this._department + ", salary="
+            + this._salary + ", startDate=" + empDate
+            + ", note=" + this._note;
     }
+
 }

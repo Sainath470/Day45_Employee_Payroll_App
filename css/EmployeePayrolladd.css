@@ -1,49 +1,55 @@
-/*------------UC1-----------------*/
-
-body 
-{
+body {
   margin: 0;
   height: 100%;
 }
-.header 
-{
+
+/* UC1 */
+
+.header {
   padding: 15px 0;
-  background-color: #ffffff;
+  background-color: #fff;
 }
-.header-content 
-{
+
+.header-content {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: 0px solid green;   
+  border: 0px solid green;
 }
-.logo-content 
-{
+
+.logo-content {
   display: flex;
   flex-direction: row;
   align-items: center;
   border: 0px solid green;
   width: 80%;
 }
-.logo-content-img { border: solid 0px #42515f;}
 
-.emp-text 
-{
+.logo-content-img {
+  border: solid 0px #42515f;
+}
+
+.emp-text {
   font: normal normal bold 20px/25px Montserrat;
   font-family: "Montserrat", sans-serif;
   letter-spacing: 0px;
   color: #82a70c;
   text-transform: capitalize;
 }
-.emp-payroll { color: #42515f; }
 
-* { box-sizing: border-box; }
+.emp-payroll {
+  color: #42515f;
+}
 
-/* UC2*/
+* {
+  box-sizing: border-box;
+}
+
+/* UC2 */
 
 .form-content {
-  min-height: calc(100%-80px);
+  min-height: calc(100% - 80px);
   background-color: #f7f7f7;
   display: flex;
   justify-content: center;
@@ -54,20 +60,10 @@ body
 .form {
   width: 65%;
   padding: 44px 60px;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #000029;
-  border: 1p solid #f5f5f5;
+  background: #fff 0% 0% no-repeat padding-box;
+  border: 1px solid #f5f5f5;
   border-radius: 8px;
   opacity: 1;
-}
-
-.form-head {
-  font: normal normal bold 24px/3px Roboto;
-  letter-spacing: 0px;
-  color: #42515f;
-  text-transform: capitalize;
-  opacity: 1;
-  padding-bottom: 20px;
 }
 
 .row-content {
@@ -86,13 +82,15 @@ label {
   padding: 12px 12px 12px 0;
   display: inline-block;
 }
-.text{
+
+.text {
   font-size: 16px;
   color: #42515f;
   opacity: 1;
   font-family: Roboto;
 }
-.input{
+
+.input {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -100,30 +98,24 @@ label {
   resize: vertical;
 }
 
-/* uc3 */
-
-.profile-radio-content 
-{
+.profile-radio-content {
   display: flex;
+  flex: 0 0 2vw;
   flex-direction: row;
-  margin-left: 35px;
 }
 
-.profile-radio-content > label 
-{
+.profile-radio-content>label {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.profile 
-{
-  width: 50px;
+.profile {
+  width: 40px;
   border-radius: 50%;
   margin-left: 12px;
 }
 
-/* UC5 */
 select {
   padding: 12px;
   border: 1px solid #ccc;
@@ -135,7 +127,6 @@ select {
   background-color: transparent;
 }
 
-/* UC6 */
 .buttonParent {
   display: flex;
   margin-bottom: 10px;
@@ -147,7 +138,7 @@ select {
   font-size: 20px;
   font-family: Roboto;
   letter-spacing: 0px;
-  color: #374b5e;
+  color: #42515f;
   opacity: 1;
   background: transparent;
   border: none;
@@ -165,128 +156,52 @@ select {
 }
 
 .cancelButton {
-  /* margin-left: 140px; */
   text-decoration: none;
   text-align: center;
 }
 
-@media only screen and (max-width: 960px) 
-{
-  .cancelButton {
-    margin-left: 0px;
-  }
-  .form {
-    width: 85%;
-    padding: 44px 20px;
-  }
+error-output {
+  font-size: 18px;
+  color: red;
+  margin-left: 10px;
 }
 
-@media only screen and (max-width: 600px)
-  {
-  .form {
-    margin-top: 10px;
-  }
-  .row {
-    flex-direction: column;
-  }
-  .uploadButton {
-    justify-content: flex-start;
-  }
-  .profile-radio-button {
-    flex-flow: wrap;
-  }
-  .submit-reset {
-    width: 100%;
-    display: flex;
-    flex-grow: 1;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  .submitButton {
-    margin: 0;
-  }
-  .buttonParent {
-    flex-direction: column-reverse;
-    align-items: flex-start;
-  }
-}
-
-/* UC7 */
 @media only screen and (max-width: 960px) {
-  .row-content {
-      display: block;
-      flex-direction: row;
-      margin-bottom: 10px;
-      align-items: center;
-      border: 0px solid green;
-  }
-  .profile 
-  {
-  width: 30px;
-  border-radius: 50%;
-  margin-left: 12px;
-  }
   .cancelButton {
-    margin-left: 100px;
+      margin-left: 0px;
   }
   .form {
-    width: 100%;
-    padding: 44px 20px;
+      width: 85%;
+      padding: 44px 20px;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .row-content {
-      display: block;
-      flex-direction: row;
-      margin-bottom: 10px;
-      align-items: center;
-      border: 0px solid green;
-  }
   .form {
-    margin-top: 10px;
-    width: 100%;
+      margin-top: 10px;
   }
   .row {
-    flex-direction: column;
+      flex-direction: column;
   }
   .uploadButton {
-    justify-content: flex-start;
-  }
-  .profile 
-  {
-  width: 30px;
-  border-radius: 50%;
-  margin-left: 12px;
+      justify-content: flex-start;
   }
   .profile-radio-button {
-    flex-flow: wrap;
+      flex-flow: wrap;
   }
-.submit-reset {
-  width: 100%;
-  display: inline-block;
-  flex-grow: 1;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-.submitButton {
-  margin: 0;
-}
-.buttonParent {
-  flex-direction: column-reverse;
-  align-items: flex-start;
-}
-.cancelButton {
-    margin-left: 100px;
+  .submit-reset {
+      width: 100%;
+      display: flex;
+      flex-grow: 1;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      margin-bottom: 20px;
   }
-}
-/*---------- UC2------------*/
-error-output
-{
-  margin-left: 10px;
-  font-size: 14px;
-  font-style: italic;
-  color: red;
+  .submitButton {
+      margin: 0;
+  }
+  .buttonParent {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+  }
 }
