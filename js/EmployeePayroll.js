@@ -58,8 +58,9 @@ class EmployeePayroll {
         return this._startDate;
     }
 
-    set startDate(startDate) {
-        this._startDate = startDate;
+    set startDate(startDate) 
+    {
+      this._startDate = startDate;
     }
 
     get note() {
@@ -73,7 +74,7 @@ class EmployeePayroll {
     toString() {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const empDate = !this._startDate ? 'undefined' : this._startDate.toLocaleDateString('en-US', options);
-        return "name=" + this._name + ", gender="
+        return "id=" + this._id + ",name=" + this._name + ", gender="
             + this._gender + ", profilePic=" + this._profilePic
             + ", departments=" + this._department + ", salary="
             + this._salary + ", startDate=" + empDate
