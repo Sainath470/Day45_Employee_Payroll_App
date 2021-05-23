@@ -56,4 +56,3 @@ const update = (node) => {
     const addUri = currentUri.replace("home", "add");
     window.location.replace(addUri + "?index=" + node.id);
 }
-

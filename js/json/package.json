@@ -16,5 +16,8 @@
   },
   "homepage": "https://github.com/Sainath470/Day45_Employee_Payroll_App#readme",
   "keywords": [],
-  "description": "employee.json"
+  "description": "employee.json",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
 }

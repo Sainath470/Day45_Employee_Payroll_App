@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     empIndex = new URLSearchParams(window.location.search).get('index');
     const empPayroll = getEmployeePayrollDataFromStorage(parseInt(empIndex));
 
-    if(empPayroll) {
+    if (empPayroll) {
         setRecords(empPayroll);
     }
 });
@@ -40,6 +40,7 @@ const getEmployeePayrollDataFromStorage = (index) => {
 
 const setRecords = (empPayroll) => {
     setValue("#name", empPayroll._name)
+    setSelectedValues('[name=profile]', empPayroll._profilePic);
     setValue("#salary", empPayroll._salary);
     setValue("#notes", empPayroll._note);
     setValue("#day", new Date(empPayroll._startDate).getDay());
@@ -47,7 +48,7 @@ const setRecords = (empPayroll) => {
     setValue("#year", new Date(empPayroll._startDate).getFullYear());
     setTextValue(".salary-output", empPayroll._salary);
     document.getElementById(empPayroll._gender).checked = true;
-    empPayroll._department.forEach(dept=> document.getElementById(dept.toLowerCase()).checked = true);
+    empPayroll._department.forEach(dept => document.getElementById(dept.toLowerCase()).checked = true);
 }
 
 const save = () => {
@@ -79,6 +80,20 @@ const unsetSelectedValues = (propertyValue) => {
         item.checked = false;
     });
 };
+
+const setSelectedValues = (propertyValue, value) => {
+    let allItems = document.querySelectorAll(propertyValue);
+    allItems.forEach(item => {
+        if (Array.isArray(value)) {
+            if (value.includes(item.value)) {
+                item.checked = true;
+            }
+        }
+        else if (item.value === value)
+            item.checked = true;
+
+    });
+}
 
 const setTextValue = (id, value) => {
     //not used anywhere!
@@ -121,10 +136,15 @@ function createAndUpdateStorage(employeePayrollData) {
         localStorage.getItem("employeePayrollList")
     );
 
-    if (employeePayrollList != undefined) {
-        employeePayrollList.push(employeePayrollData);
+    const index = new URLSearchParams(window.location.search).get('index');
+    if (index == null || parseInt(index) < 0) {
+        if (employeePayrollList != undefined) {
+            employeePayrollList.push(employeePayrollData);
+        } else {
+            employeePayrollList = [employeePayrollData];
+        }
     } else {
-        employeePayrollList = [employeePayrollData];
+        employeePayrollList[parseInt(index)] = employeePayrollData;
     }
     alert(employeePayrollList.toString());
     localStorage.setItem(
